@@ -1,11 +1,17 @@
-import './App.css';
-import Header from './Header';
+import "./App.css";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div>
       <Header />
-    <p>Delicious Pasta</p>
+      <main>
+        <section>
+          <h1>pasta</h1>
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 }

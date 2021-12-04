@@ -1,0 +1,4 @@
+export {
+    deafult
+}
+from './Footer';

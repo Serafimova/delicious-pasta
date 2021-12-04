@@ -1,0 +1,58 @@
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+
+.footer {
+    padding: 20px 200px;
+    background-color: #06080D;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-contacts-title {
+    text-align: center;
+}
+
+.footer-contacts-content {
+    margin: 20px 0;
+}
+
+.footer-contacts-content i {
+    color: tomato;
+    padding-right: 15px;
+    font-size: 20px;
+}
+
+.footer-social {
+    color: white;
+    /* text-align: center; */
+}
+
+.footer-social-title {
+    padding-left: 10px;
+}
+
+.footer-social-content {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-social-content-list {
+    list-style-type: none;
+}
+
+.footer-social-content-list i {
+    padding-right: 15px;
+    font-size: 20px;
+}
+
+.footer-social-content-list a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-social-content-list a:hover {
+    color: tomato;
+}
