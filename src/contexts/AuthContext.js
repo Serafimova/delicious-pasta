@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import useLocalStorageHook from "../hooks/useLocalStorageHook";
 
 const AuthContext = createContext();
@@ -14,7 +14,6 @@ export const AuthProvider = ({ children }) => {
 
   const login = (authData) => {
     setUser(authData);
-    console.log('authcontext set user ', user);
   };
 
   const logout = () => {

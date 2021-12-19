@@ -4,7 +4,7 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import styles from "./Login.module.css";
 
 export default function Login() {
-  const { user, login } = useAuthContext();
+  const { login } = useAuthContext();
   const navigate = useNavigate();
 
   const onLoginHandler = (e) => {
@@ -68,9 +68,6 @@ export default function Login() {
         <h3>Not registered?</h3>
         <Link to="/register" className={styles["link"]}>Create an account</Link>
       </form>
-      {/* <article className={styles["login-img-container"]}>
-        <img src="./image/spaghetti-small.jpg" alt="spaghetti" className={styles["login-img"]} />
-      </article> */}
     </section>
   );
 }
