@@ -1,7 +1,36 @@
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../contexts/AuthContext";
 import styles from "./Header.module.css";
 
 export default function Header() {
+  const { user, isAuthenticated } = useAuthContext();
+
+  let userNav = (
+    <>
+      <p className={styles["header-welcome"]}>Nice to see you again, {user.email}</p>
+      <li className={styles["header-nav-list"]}>
+        <Link to="/my-recipies">My Recipies</Link>
+      </li>
+      <li className={styles["header-nav-list"]}>
+        <Link to="/create">Add new recipe</Link>
+      </li>
+      <li className={styles["header-nav-list"]}>
+        <Link to="/logout">Logout</Link>
+      </li>
+    </>
+  );
+
+  let guestNav = (
+    <>
+      <li className={styles["header-nav-list"]}>
+        <Link to="/login">Login</Link>
+      </li>
+      <li className={styles["header-nav-list"]}>
+        <Link to="/register">Register</Link>
+      </li>
+    </>
+  );
+
   return (
     <header>
       <article className={styles["header-article"]}>
@@ -19,23 +48,9 @@ export default function Header() {
             <Link to="/recipies">Recipies</Link>
           </li>
           <li className={styles["header-nav-list"]}>
-            <Link to="/login">Login</Link>
-          </li>
-          <li className={styles["header-nav-list"]}>
-            <Link to="/register">Register</Link>
-          </li>
-          <li className={styles["header-nav-list"]}>
-            <Link to="/my-recipies">My Recipies</Link>
-          </li>
-          <li className={styles["header-nav-list"]}>
-            <Link to="/create">Add new recipe</Link>
-          </li>
-          <li className={styles["header-nav-list"]}>
-            <Link to="/logout">Logout</Link>
-          </li>{" "}
-          <li className={styles["header-nav-list"]}>
             <Link to="/about">About</Link>
           </li>
+          {isAuthenticated ? userNav : guestNav}
         </ul>
       </nav>
     </header>

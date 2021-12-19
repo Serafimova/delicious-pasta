@@ -36,6 +36,12 @@ header {
     padding: 0px 20px;
 }
 
+.header-welcome{
+    color: tomato;
+    margin: 0 15px 0 25px;
+    font-weight: bold;
+}
+
 .header-nav-list:hover {
     text-decoration: underline;
 }
@@ -46,6 +52,6 @@ header {
 }
 
 .header-nav-list a:hover {
-    color: rgb(243, 243, 52);
+    color: tomato;
     font-weight: bold;
 }

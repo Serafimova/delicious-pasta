@@ -16,17 +16,17 @@ export default function Footer() {
         <h3 className={styles["footer-social-title"]}>Find us</h3>
         <ul className={styles["footer-social-content"]}>
           <li className={styles["footer-social-content-list"]}>
-            <a href="#">
+            <a href="https://bg-bg.facebook.com/" target="_blank" rel="noreferrer noopener">
               <i className="fab fa-facebook"></i>
             </a>
           </li>
           <li className={styles["footer-social-content-list"]}>
-            <a href="#">
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener">
               <i className="fab fa-instagram"></i>
             </a>
           </li>
           <li className={styles["footer-social-content-list"]}>
-            <a href="#">
+            <a href="https://twitter.com/?lang=bg" target="_blank" rel="noreferrer noopener">
               <i className="fab fa-twitter"></i>
             </a>
           </li>
