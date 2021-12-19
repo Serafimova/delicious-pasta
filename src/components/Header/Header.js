@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -12,28 +13,28 @@ export default function Header() {
       <nav>
         <ul className={styles["header-nav"]}>
           <li className={styles["header-nav-list"]}>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className={styles["header-nav-list"]}>
-            <a href="/about">About</a>
+            <Link to="/recipies">Recipies</Link>
           </li>
           <li className={styles["header-nav-list"]}>
-            <a href="/recipies">Recipies</a>
+            <Link to="/login">Login</Link>
           </li>
           <li className={styles["header-nav-list"]}>
-            <a href="/login">Login</a>
+            <Link to="/register">Register</Link>
           </li>
           <li className={styles["header-nav-list"]}>
-            <a href="/register">Register</a>
+            <Link to="/my-recipies">My Recipies</Link>
           </li>
           <li className={styles["header-nav-list"]}>
-            <a href="/my-recipies">My Recipies</a>
+            <Link to="/create">Add new recipe</Link>
           </li>
           <li className={styles["header-nav-list"]}>
-            <a href="/create">Add new recipe</a>
-          </li>
+            <Link to="/logout">Logout</Link>
+          </li>{" "}
           <li className={styles["header-nav-list"]}>
-            <a href="/logout">Logout</a>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>
