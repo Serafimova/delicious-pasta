@@ -11,6 +11,7 @@ import MyRecipies from "./components/MyRecipies";
 import Create from "./components/Create";
 import Logout from './components/Logout';
 import Footer from "./components/Footer/Footer";
+import PrivateRoutes from "./components/PrivateRoutes/ProvateRoutes";
 
 function App() {
   return (
@@ -24,9 +25,13 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+
+            <Route element={<PrivateRoutes/>}>
             <Route path="/my-recipies" element={<MyRecipies />} />
-            <Route path="/create" element={<Create />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/create" element={<Create />} />
+
+            </Route>
           </Routes>
         </main>
         <Footer />
