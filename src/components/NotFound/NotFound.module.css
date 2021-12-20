@@ -1,7 +1,5 @@
 .notFound {
     height: 700px;
-    display: flex;
-    justify-content: center;
     align-items: center;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../images/meal.jpg');
     background-repeat: no-repeat;

@@ -1,0 +1,46 @@
+.about {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../images/pasta-smile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 25% 70%;
+    color: #ffd507;
+    padding: 40px;
+}
+
+.about-article,
+.museum, .map {
+    width: 800px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px;
+}
+
+
+.map-iframe{
+width: 500px;
+height: 350px;
+}
+
+/* allowfullscreen=""
+loading="lazy" */
+
+/* .home {
+    margin-right: 50px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.home:hover {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.contact {
+    margin-left: 50px;
+} */
