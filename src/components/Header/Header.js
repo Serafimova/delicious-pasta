@@ -7,9 +7,14 @@ export default function Header() {
 
   let userNav = (
     <>
-      <p className={styles["header-welcome"]}>Nice to see you again, {user.email}</p>
+      <p className={styles["header-welcome"]}>
+        Nice to see you again, {user.email}
+      </p>
       <li className={styles["header-nav-list"]}>
         <Link to="/my-recipies">My Recipies</Link>
+      </li>{" "}
+      <li className={styles["header-nav-list"]}>
+        <Link to="/my-profile">My Profile</Link>
       </li>
       <li className={styles["header-nav-list"]}>
         <Link to="/create">Add new recipe</Link>

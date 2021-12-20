@@ -9,6 +9,7 @@ import About from "./components/About";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import MyRecipies from "./components/MyRecipies";
+import MyProfile from "./components/MyProfile";
 import Create from "./components/Create";
 import Logout from "./components/Logout";
 import Footer from "./components/Footer/Footer";
@@ -35,6 +36,7 @@ function App() {
 
               <Route element={<PrivateRoutes />}>
                 <Route path="/my-recipies" element={<MyRecipies />} />
+                <Route path="/my-profile" element={<MyProfile />} />
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/create" element={<Create />} />
               </Route>
