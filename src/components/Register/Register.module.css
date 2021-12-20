@@ -1,12 +1,15 @@
-.login {
+.register {
     height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #ffffff;
+    background-image: url('../../images/pasta-heart.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.login-form {
+.register-form {
     background: transparent;
     margin: 100px;
     position: relative;
@@ -18,11 +21,11 @@
     padding: 20px 70px 70px;
 }
 
-.login-form-title {
+.register-form-title {
     font-size: 32px;
 }
 
-.login-form-field {
+.register-form-field {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -31,7 +34,7 @@
     align-items: stretch;
 }
 
-.login-form-field-label {
+.register-form-field-label {
     font-weight: bold;
     margin-bottom: 10px;
 }

@@ -1,0 +1,39 @@
+.notFound {
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../images/meal.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    color: #ffd507;
+}
+
+.notFound-article {
+    position: relative;
+    left: -410px;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 300px;
+}
+
+.home {
+    margin-right: 50px;
+    text-decoration: none;
+    color: inherit
+}
+
+.home:hover {
+    font-style: italic;
+    text-decoration: underline;
+
+}
+
+
+
+.contact {
+    margin-left: 50px;
+}

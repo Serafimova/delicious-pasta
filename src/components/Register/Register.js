@@ -25,23 +25,17 @@ export default function Register() {
 
   return (
     <section
-      id="login-page"
-      className={styles["login"]}
-      style={{
-        backgroundImage: "url(/images/pasta-heart.jpg)",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+      id="register-page"
+      className={styles["register"]}>
       <form
-        id="login-form"
-        className={styles["login-form"]}
+        id="register-form"
+        className={styles["register-form"]}
         method="POST"
         onSubmit={onRegisterHandler}
       >
-        <h2 className={styles["login-form-title"]}>Register Form</h2>
-        <p className={styles["login-form-field"]}>
-          <label htmlFor="email" className={styles["login-form-field-label"]}>
+        <h2 className={styles["register-form-title"]}>Register Form</h2>
+        <p className={styles["register-form-field"]}>
+          <label htmlFor="email" className={styles["register-form-field-label"]}>
             Email
           </label>
           <span>
@@ -54,10 +48,10 @@ export default function Register() {
             />
           </span>
         </p>
-        <p className={styles["login-form-field"]}>
+        <p className={styles["register-form-field"]}>
           <label
             htmlFor="password"
-            className={styles["login-form-field-label"]}
+            className={styles["register-form-field-label"]}
           >
             Password
           </label>
@@ -71,10 +65,10 @@ export default function Register() {
             />
           </span>
         </p>
-        <p className={styles["login-form-field"]}>
+        <p className={styles["register-form-field"]}>
           <label
             htmlFor="repeat-pasword"
-            className={styles["login-form-field-label"]}
+            className={styles["register-form-field-label"]}
           >
             Repeat Password
           </label>

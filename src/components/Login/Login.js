@@ -26,7 +26,7 @@ export default function Login() {
   };
 
   return (
-    <section id="login-page" className={styles["login"]} style={{ backgroundImage: "url(/images/spaghetti.jpg)", backgroundRepeat:"no-repeat", backgroundSize:"cover" }}>
+    <section id="login-page" className={styles["login"]}>
       <form
         id="login-form"
         className={styles["login-form"]}

@@ -4,6 +4,9 @@
     justify-content: center;
     align-items: center;
     color: #ffffff;
+    background-image: url('../../images/spaghetti.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .login-form {
