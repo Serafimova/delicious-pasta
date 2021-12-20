@@ -3,7 +3,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../images/meal.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -23,16 +22,13 @@
 .home {
     margin-right: 50px;
     text-decoration: none;
-    color: inherit
+    color: inherit;
 }
 
 .home:hover {
     font-style: italic;
     text-decoration: underline;
-
 }
-
-
 
 .contact {
     margin-left: 50px;
