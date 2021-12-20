@@ -15,12 +15,14 @@ export default function Logout() {
     user,
     logout
   } = useAuthContext();
+
   useEffect(() => {
     authService.logout(user.accessToken)
       .then(() => {
         logout();
         navigate('/');
       })
-  }, []);
+  }, [logout, navigate, user.accessToken]);
+
   return null;
 }

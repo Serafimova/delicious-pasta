@@ -24,7 +24,7 @@ export default function Login() {
     authService
       .login(email, password)
       .then((data) => {
-        if (data.code == 403) {
+        if (data.code === 403) {
           throw new Error("Invalid email or password!");
         }
         login(data);
