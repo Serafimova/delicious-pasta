@@ -1,0 +1,12 @@
+.alert {
+    background: rgb(211, 148, 148);
+    color: red;
+    position: absolute;
+    top: 140px;
+    left: 100px;
+    width: 400px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 10px;
+    text-align: center;
+}

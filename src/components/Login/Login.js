@@ -2,9 +2,12 @@ import * as authService from "../../services/authService";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import styles from "./Login.module.css";
+import { useNotificationsContext } from "../../contexts/NotificationsContext";
+import validator from 'validator';
 
 export default function Login() {
   const { login } = useAuthContext();
+  const { newNotification } = useNotificationsContext();
   const navigate = useNavigate();
 
   const onLoginHandler = (e) => {
@@ -13,14 +16,22 @@ export default function Login() {
     let email = formData.get("email");
     let password = formData.get("password");
 
+    if (!validator.isEmail(email)) {
+      newNotification("Please enter a valid email!");
+      return;
+    }
+    
     authService
       .login(email, password)
       .then((data) => {
+        if (data.code == 403) {
+          throw new Error("Invalid email or password!");
+        }
         login(data);
         navigate("/recipies");
       })
       .catch((err) => {
-        // to add notification
+        newNotification(err.message);
         console.log(err);
       });
   };
@@ -66,7 +77,9 @@ export default function Login() {
         </p>
         <input className={styles["form-button"]} type="submit" value="Login" />
         <h3>Not registered?</h3>
-        <Link to="/register" className={styles["link"]}>Create an account</Link>
+        <Link to="/register" className={styles["link"]}>
+          Create an account
+        </Link>
       </form>
     </section>
   );

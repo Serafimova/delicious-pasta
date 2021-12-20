@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styles from "./About.module.css";
 
 export default function About() {
@@ -21,6 +20,7 @@ export default function About() {
       </article>
       <article className={styles["map"]}>
         <iframe
+          title="museum-map"
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11875.548009808157!2d12.465837498889165!3d41.91678778867999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcc6597c584a70235!2sNational%20Museum%20of%20Pasta!5e0!3m2!1sbg!2sbg!4v1640033151807!5m2!1sbg!2sbg"
           className={styles["map-iframe"]}
         ></iframe>

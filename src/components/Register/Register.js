@@ -2,10 +2,13 @@ import styles from "./Register.module.css";
 import * as authService from "../../services/authService";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { useNotificationsContext } from "../../contexts/NotificationsContext";
+import validator from "validator";
 
 export default function Register() {
-  const navigate = useNavigate();
   const { login } = useAuthContext();
+  const { newNotification } = useNotificationsContext();
+  const navigate = useNavigate();
 
   const onRegisterHandler = (e) => {
     e.preventDefault();
@@ -13,20 +16,33 @@ export default function Register() {
     let email = formData.get("email");
     let password = formData.get("password");
     let repeatPassword = formData.get("repeat-pasword");
-
+    if (!validator.isEmail(email)) {
+      newNotification("Please enter a valid email!");
+      return;
+    }
+    if (password.length < 6 || repeatPassword.length < 6) {
+      newNotification("Password must be at least 6 character long!");
+      return;
+    }
     if (password !== repeatPassword) {
-      console.log("ney");
+      newNotification("Password and Repeat password must be the same!");
       return;
     }
 
-    authService.register(email, password).then((data) => login(data));
-    navigate("/recipies");
+    authService
+      .register(email, password)
+      .then((data) => {
+        login(data);
+        navigate("/recipies");
+      })
+      .catch((err) => {
+        newNotification(err.message);
+        console.log(err);
+      });
   };
 
   return (
-    <section
-      id="register-page"
-      className={styles["register"]}>
+    <section id="register-page" className={styles["register"]}>
       <form
         id="register-form"
         className={styles["register-form"]}
@@ -35,7 +51,10 @@ export default function Register() {
       >
         <h2 className={styles["register-form-title"]}>Register Form</h2>
         <p className={styles["register-form-field"]}>
-          <label htmlFor="email" className={styles["register-form-field-label"]}>
+          <label
+            htmlFor="email"
+            className={styles["register-form-field-label"]}
+          >
             Email
           </label>
           <span>
