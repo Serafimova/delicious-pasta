@@ -1,26 +1,5 @@
 @import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
 
-
-/* body {
-    font-family: Helvetica, sans-serif;
-    margin: 0;
-
-}
-
-main {
-    display: flex;
-    justify-content: space-between;
-    /* max-width: 1100px;
-    padding: 50px;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-} */
-
-
 .card {
     margin: 20px;
     border: 1px solid black;

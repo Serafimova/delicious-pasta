@@ -1,0 +1,85 @@
+.create-section{
+    /* height: 700px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../images/farfalle.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 18px;
+}
+
+.card {
+    margin: 20px auto;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    width: 1100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.card-title {
+    text-align: center;
+    margin: 20px;
+    font-size: 36px;
+}
+
+.card-field {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-field label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-field p{
+    font-size: 12px;
+}
+
+.card-field textarea {
+    width: 55%;
+    padding: 10px;
+    border: 1px solid black;
+    align-content: center;
+    border-radius: 6px;
+}
+
+.card-field input {
+    width: 55%;
+    border-radius: 6px;
+    padding: 4px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.btn-green, .btn-red {
+    margin: 20px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-green:hover, .btn-red:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.btn-red {
+    background-color: red;
+}
+
+.btn-green {
+    background-color: green;
+}
