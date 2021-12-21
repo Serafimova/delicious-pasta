@@ -11,6 +11,7 @@ import Register from "./components/Register";
 import MyRecipes from "./components/MyRecipes/MyRecipes";
 import MyProfile from "./components/MyProfile";
 import Create from "./components/Create";
+import Details from "./components/Details/Details";
 import Logout from "./components/Logout";
 import Footer from "./components/Footer/Footer";
 import PrivateRoutes from "./components/PrivateRoutes/PrivateRoutes";
@@ -39,6 +40,7 @@ function App() {
                 <Route path="/my-profile" element={<MyProfile />} />
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/create" element={<Create />} />
+                <Route path="/:recipeId/details" element={<Details />} />
               </Route>
             </Routes>
           </main>

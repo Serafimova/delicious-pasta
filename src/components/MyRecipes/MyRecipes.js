@@ -22,7 +22,7 @@ export default function MyRecipes() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [user._id]);
 
   return (
     <section className={styles["myrecipes-section"]}>

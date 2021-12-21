@@ -34,7 +34,7 @@ export default function RecipeCard({recipe}) {
             </p>
           </article>
         </article>
-        <Link to={`/details/${recipe._id}`} className={styles["btn"]}>How to cook it</Link>
+        <Link to={`/${recipe._id}/details`} className={styles["btn"]}>How to cook it</Link>
       </section>
     </>
   );
