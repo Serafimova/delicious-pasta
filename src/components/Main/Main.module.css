@@ -1,5 +1,4 @@
 .main-section {
-    /* height: 500px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,40 +13,63 @@
     flex-direction: column;
 }
 
-.main-content-title{
-font-size: 42px;
-font-weight: bold;
-line-height: 2;
-padding-bottom: 30px;
+.main-content-title {
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 2;
+    padding-bottom: 30px;
 }
 
-.main-content-text{
+.main-content-text {
     font-size: 24px;
 }
 
-.main-acc{
+.main-acc {
     margin: 100px 0;
 }
-.link{
-    /* margin:0 50px; */
+
+.link {
     text-decoration: underline;
     color: white;
+    padding: 0 10px;
 }
 
 .link:hover {
     font-style: italic;
-}
-.recent{
-    background: url('../../images/vegetables-cover.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 500px;
+    color: white;
+    font-weight: bold;
 }
 
-.recent-title{
-    margin: 0;
+.recent {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../images/love-pasta.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffd507;
+    padding: 60px;
+    
+}
+
+.recent-title {
+    margin: 20px;
     text-align: center;
     font-size: 42px;
     font-weight: bold;
-    color: white;
+  
+}
+
+.recipes-title {
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 2;
+    padding-bottom: 30px;
+    margin: 0;
+}
+
+.recipes-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
 }
