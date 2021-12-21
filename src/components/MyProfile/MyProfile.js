@@ -1,41 +1,10 @@
-// import * as authService from "../../services/authService";
-// import { useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
-// import { useNotificationsContext } from "../../contexts/NotificationsContext";
-// import validator from 'validator';
+
 import styles from "./MyProfile.module.css";
 
 export default function MyProfile() {
   const { user } = useAuthContext();
-  // const { newNotification } = useNotificationsContext();
-  // const navigate = useNavigate();
-
-  // const onLoginHandler = (e) => {
-  //   e.preventDefault();
-  //   let formData = new FormData(e.currentTarget);
-  //   let email = formData.get("email");
-  //   let password = formData.get("password");
-
-  //   if (!validator.isEmail(email)) {
-  //     newNotification("Please enter a valid email!");
-  //     return;
-  //   }
-
-  //   authService
-  //     .login(email, password)
-  //     .then((data) => {
-  //       if (data.code === 403) {
-  //         throw new Error("Invalid email or password!");
-  //       }
-  //       login(data);
-  //       navigate("/recipes");
-  //     })
-  //     .catch((err) => {
-  //       newNotification(err.message);
-  //       console.log(err);
-  //     });
-  // };
 
   return (
     <section id="profile-page" className={styles["profile"]}>

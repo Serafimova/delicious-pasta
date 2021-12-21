@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./NotFound.module.css";
 
-export default function PrivateRoutes() {
+export default function NotFound() {
   return (
     <section className={styles["notFound"]}>
       <article className={styles["notFound-article"]}>

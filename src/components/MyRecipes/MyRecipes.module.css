@@ -1,0 +1,49 @@
+.myrecipes-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../images/farfalle.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    color: #ffd507;
+    font-size: 36px;
+    text-align: center;
+}
+
+.myrecipes-title {
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 2;
+    padding-bottom: 30px;
+    margin: 0;
+}
+
+.myrecipes-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+}
+.no-recipes{
+    margin-bottom: 30px;
+}
+
+.link h2,
+.link p {
+    margin: 0px;
+}
+
+.link {
+    text-decoration: underline;
+    color: white;
+}
+
+.link:hover {
+    font-style: italic;
+    color: white;
+    font-weight: bold;
+}

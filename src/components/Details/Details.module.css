@@ -1,0 +1,75 @@
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+
+/* .card {
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+   flex-basis: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    align-items: center;
+}
+
+.card-image {
+    width: 90%;
+    height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+.card-image img {
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.card-content-title {
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.card-props {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.time,
+.serves,
+.difficulty {
+    font-size: 16px;
+    text-align: center;
+    width: 80px;
+}
+
+.time-title, .serves-title, .difficulty-title{
+    margin: 0;
+}
+
+.fa-clock,
+.fa-utensils,
+.fa-leaf {
+    font-size: 18px;
+    padding-right: 8px;
+}
+
+.btn {
+    font-size: 18px;
+    margin: 20px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: bold;
+    background: orange;
+    color: white;
+}
+
+.btn:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 16px;
+} */

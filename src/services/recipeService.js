@@ -5,7 +5,12 @@ export const getAllRecipes = () => {
 }
 
 export const getRecentRecipes = () => {
-    return fetch(`${mainUrl}/pastaRecipes?sortBy=_createdOn%20desc`).then(res => res.json())
+    return fetch(`${mainUrl}/pastaRecipes?sortBy=_createdOn%20desc`).then(res => res.json());
+}
+
+export const getRecipesByOwnerId = (ownerId)=>{
+    const query = encodeURIComponent(`_ownerId="${ownerId}"`);
+    return fetch(`${mainUrl}/pastaRecipes?where=${query}`).then(res => res.json());
 }
 
 
