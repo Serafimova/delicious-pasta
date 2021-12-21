@@ -1,16 +1,36 @@
+import { useState, useEffect } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
-import { useNotificationsContext } from "../../contexts/NotificationsContext";
 import * as recipeService from "../../services/recipeService";
+import { useNotificationsContext } from "../../contexts/NotificationsContext";
 import validator from "validator";
-import styles from "./Create.module.css";
 
-export default function Create() {
+import styles from "./Edit.module.css";
+
+export default function Edit() {
   const { user } = useAuthContext();
+  const { recipeId } = useParams();
+  const [recipe, setRecipe] = useState({});
   const navigate = useNavigate();
   const { newNotification } = useNotificationsContext();
 
-  const onCreateHandler = (e) => {
+
+  useEffect(() => {
+    recipeService
+      .getRecipeById(recipeId)
+      .then((result) => {
+        if (result.code === 404) {
+          throw new Error(result.message);
+        }
+        setRecipe(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [recipeId]);
+
+
+  const onEditHandler = (e) => {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
     let name = formData.get("name");
@@ -63,21 +83,27 @@ export default function Create() {
       method: methodArray,
     };
 
-    recipeService.createRecipe(recipeData, user.accessToken).then((result) => {
-      console.log("created");
+    recipeService.editRecipe(recipeId, recipeData, user.accessToken).then((result) => {
+      console.log("edited");
       console.log(result);
-      navigate("/recipes");
+      navigate(`/${recipeId}/details`);
     });
   };
 
   return (
-    <section className={styles["create-section"]}>
-      <h3 className={styles["card-title"]}>Add new recipe</h3>
+    <section className={styles["edit-section"]}>
+      <h3 className={styles["card-title"]}>Edit recipe</h3>
       <article className={styles["card"]}>
-        <form id="create-form" method="POST" onSubmit={onCreateHandler}>
+        <form id="create-form" method="POST" onSubmit={onEditHandler}>
           <article className={styles["card-field"]}>
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="Name" />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Name"
+              defaultValue={recipe.name}
+            />
           </article>
           <article className={styles["card-field"]}>
             <label htmlFor="cookingTime">Cooking time in minutes</label>
@@ -87,6 +113,7 @@ export default function Create() {
               id="cookingTime"
               placeholder="Cooking time in minutes"
               min={1}
+              defaultValue={recipe.cookingTime}
             />
           </article>
           <article className={styles["card-field"]}>
@@ -97,6 +124,7 @@ export default function Create() {
               id="serves"
               placeholder="Serves"
               min={1}
+              defaultValue={recipe.serves}
             />
           </article>
           <article className={styles["card-field"]}>
@@ -106,6 +134,7 @@ export default function Create() {
               name="difficulty"
               id="difficulty"
               placeholder="Difficulty"
+              defaultValue={recipe.difficulty}
             />
           </article>
           <article className={styles["card-field"]}>
@@ -115,6 +144,7 @@ export default function Create() {
               name="imageUrl"
               id="imageUrl"
               placeholder="Image URL"
+              defaultValue={recipe.img}
             />
           </article>
           <article className={styles["card-field"]}>
@@ -126,6 +156,7 @@ export default function Create() {
               id="ingredients"
               rows="8"
               placeholder="Ingredients"
+              defaultValue={recipe.ingredients}
             ></textarea>
           </article>
           <article className={styles["card-field"]}>
@@ -136,13 +167,15 @@ export default function Create() {
               id="method"
               rows="10"
               placeholder="Let us know how to cook it..."
+              defaultValue={recipe.method}
             ></textarea>
           </article>
           <br />
           <input type="submit" className={styles["btn-green"]} value="Save" />
-          <Link to="/recipes" className={styles["btn-red"]} type="button">
+          <Link to={`/${recipe._id}/details`} className={styles["btn-red"]} type="button">
             Cancel
           </Link>
+          
         </form>
       </article>
     </section>

@@ -15,21 +15,21 @@ export default function RecipeCard({recipe}) {
           <article className={styles["time"]}>
             <p className={styles["time-title"]}>Cook time</p>
             <p className={styles["time-text"]}>
-              {/* <i className={styles["far fa-clock"]}></i> */}
+              <i className="far fa-clock"></i>
               {recipe.cookingTime}
             </p>
           </article>
           <article className={styles["serves"]}>
             <p className={styles["serves-title"]}>Serves</p>
             <p className={styles["serves-text"]}>
-              {/* <i className={styles["fas fa-utensils"]}></i> */}
+              <i className="fas fa-utensils"></i>
               {recipe.serves}
             </p>
           </article>
           <article className={styles["difficulty"]}>
             <p className={styles["difficulty-title"]}>Difficulty</p>
-            <p className={styles["difficulty"]}>
-              {/* <i className={styles["fas fa-leaf"]}></i> */}
+            <p className={styles["difficulty-text"]}>
+              <i className="fas fa-leaf"></i>
               {recipe.difficulty}
             </p>
           </article>

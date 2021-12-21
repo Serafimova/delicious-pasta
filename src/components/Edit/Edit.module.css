@@ -1,4 +1,4 @@
-.create-section {
+.edit-section{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +38,7 @@
     font-weight: bold;
 }
 
-.card-field p {
+.card-field p{
     font-size: 12px;
 }
 
@@ -58,24 +58,22 @@
     border: 1px solid black;
 }
 
-.btn-green,
-.btn-red {
+.btn-green, .btn-red {
     margin: 20px;
     padding: 10px 15px;
     border-radius: 10px;
     border: 1px solid black;
     font-weight: bold;
     color: white;
-    text-decoration: underline;
 }
 
-.btn-green:hover,
-.btn-red:hover {
+.btn-green:hover, .btn-red:hover {
     cursor: pointer;
     text-decoration: underline;
     font-style: italic;
     font-size: 16px;
     color: #0A58CA;
+
 }
 
 .btn-red {

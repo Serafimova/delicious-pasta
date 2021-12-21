@@ -30,6 +30,19 @@ export const createRecipe = (recipeData, token) => {
     }).then(res => res.json())
 }
 
+export const editRecipe = (recipeId, recipeData, token) => {
+    return fetch(`${mainUrl}/pastaRecipes/${recipeId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify({
+            ...recipeData
+        })
+    }).then(res => res.json())
+}
+
 export const deleteRecipe = (recipeId, token) => {
     return fetch(`${mainUrl}/pastaRecipes/${recipeId}`, {
         method: 'DELETE',

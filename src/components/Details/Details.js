@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import * as recipeService from "../../services/recipeService";
 import styles from "./Details.module.css";
@@ -37,7 +37,7 @@ export default function Details() {
 
   const ownerButtons = (
     <article className={styles["owner-buttons"]}>
-      <button className={styles["btn-orange"]}>Edit</button>
+      <Link to={`/${recipe._id}/edit`} className={styles["btn-orange"]}>Edit</Link>
       <button className={styles["btn-red"]} onClick={onDeleteHandler}>
         Delete
       </button>
@@ -60,29 +60,29 @@ export default function Details() {
               <article className={styles["time"]}>
                 <p className={styles["time-title"]}>Cook time</p>
                 <p className={styles["time-text"]}>
-                  <i className={styles["far fa-clock"]}></i>
+                  <i className="far fa-clock"></i>
                   {recipe.cookingTime} min
                 </p>
               </article>
               <article className={styles["serves"]}>
                 <p className={styles["serves-title"]}>Serves</p>
                 <p className={styles["serves-text"]}>
-                  <i className={styles["fas fa-utensils"]}></i>
+                  <i className="fas fa-utensils"></i>
                   {recipe.serves}
                 </p>
               </article>
               <article className={styles["difficulty"]}>
                 <p className={styles["difficulty-title"]}>Difficulty</p>
 
-                <p className={styles["difficulty"]}>
-                  <i className={styles["fas fa-leaf"]}></i>
+                <p className={styles["difficulty-text"]}>
+                  <i className="fas fa-leaf"></i>
                   {recipe.difficulty}
                 </p>
               </article>
             </article>
             <article className={styles["guest"]}>
               <p className={styles["likes"]}>
-                <i className={styles["fas fa-heart"]}></i>Liked by 1 Pasta
+                <i className="fas fa-heart"></i>Liked by 1 Pasta
                 Lovers
               </p>
               {user._id && user._id !== recipe._ownerId ? (

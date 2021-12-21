@@ -1,6 +1,6 @@
 @import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
 
-.details{
+.details {
     /* height: 700px; */
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@
 }
 
 
-.recipie-info{
+.recipie-info {
     text-align: center;
     display: flex;
 }
@@ -62,27 +62,33 @@
     width: 80px;
 }
 
-.fa-clock,
-.fa-utensils,
-.fa-leaf {
+.time-text i,
+.time-text,
+.serves-text i,
+.serves-text,
+.difficulty-text i,
+.serves-text {
     font-size: 18px;
     padding-right: 8px;
 }
 
-.owner-buttons, .guest{
+.owner-buttons,
+.guest {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 40px 20px;
 }
 
-.fa-heart{
+.likes i {
     font-size: 22px;
     padding-right: 8px;
     color: rgb(221, 61, 160);
 }
 
-.btn-pink, .btn-orange, .btn-red {
+.btn-pink,
+.btn-orange,
+.btn-red {
     margin: 20px;
     padding: 10px 15px;
     border-radius: 10px;
@@ -91,11 +97,14 @@
     color: white;
 }
 
-.btn-pink:hover, .btn-orange:hover, .btn-red:hover {
+.btn-pink:hover,
+.btn-orange:hover,
+.btn-red:hover {
     cursor: pointer;
     text-decoration: underline;
     font-style: italic;
     font-size: 16px;
+    color: #0A58CA;
 }
 
 .btn-pink {
@@ -112,19 +121,21 @@
 }
 
 
-.cooking{
+.cooking {
     padding: 0 30px;
 }
 
-.cooking-ingredients{
+.cooking-ingredients {
     margin-bottom: 50px;
 }
 
-.cooking-ingredients-title, .cooking-steps-title{
+.cooking-ingredients-title,
+.cooking-steps-title {
     margin: 20px 0;
 }
 
-.cooking-ingredients-content, .cooking-steps-content{
+.cooking-ingredients-content,
+.cooking-steps-content {
     margin: 20px 0;
     text-align: justify;
 }
