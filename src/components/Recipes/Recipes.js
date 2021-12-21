@@ -11,8 +11,10 @@ export default function Recipes() {
 
   useEffect(()=>{
     recipeService.getAllRecipes().then(result=>{
+      if (result.code === 404) {
+        throw new Error(result.message);
+      }
       const recipesData =  Object.values(result);
-      // console.log(recipes);
       setRecipes(recipesData);
      })
     .catch((err)=>{

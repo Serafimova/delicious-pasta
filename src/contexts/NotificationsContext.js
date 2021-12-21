@@ -21,7 +21,7 @@ export const NotificationsProvider = ({ children }) => {
 
   setTimeout(() => {
     setNotifications(defaultNotificationState);
-  }, 5000);
+  }, 9000);
 
   return (
     <NotificationsContext.Provider

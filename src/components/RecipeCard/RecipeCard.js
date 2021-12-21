@@ -16,7 +16,7 @@ export default function RecipeCard({recipe}) {
             <p className={styles["time-title"]}>Cook time</p>
             <p className={styles["time-text"]}>
               {/* <i className={styles["far fa-clock"]}></i> */}
-              {recipe.time}
+              {recipe.cookingTime}
             </p>
           </article>
           <article className={styles["serves"]}>
