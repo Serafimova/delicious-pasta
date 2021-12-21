@@ -4,11 +4,11 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { NotificationsProvider } from "./contexts/NotificationsContext";
 import Header from "./components/Header";
 import Main from "./components/Main";
-import Recipies from "./components/Recipies";
+import Recipes from "./components/Recipes";
 import About from "./components/About";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import MyRecipies from "./components/MyRecipies";
+import MyRecipes from "./components/MyRecipes/MyRecipes";
 import MyProfile from "./components/MyProfile";
 import Create from "./components/Create";
 import Logout from "./components/Logout";
@@ -29,13 +29,13 @@ function App() {
             <Routes>
               <Route path="*" element={<NotFound />} />
               <Route path="/" element={<Main />} />
-              <Route path="/recipies" element={<Recipies />} />
+              <Route path="/recipes" element={<Recipes />} />
               <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
 
               <Route element={<PrivateRoutes />}>
-                <Route path="/my-recipies" element={<MyRecipies />} />
+                <Route path="/my-recipes" element={<MyRecipes />} />
                 <Route path="/my-profile" element={<MyProfile />} />
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/create" element={<Create />} />

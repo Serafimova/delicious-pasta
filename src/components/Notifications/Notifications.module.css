@@ -10,3 +10,9 @@
     border-radius: 10px;
     text-align: center;
 }
+
+.alert p {
+    font-size: 12px;
+    color: black;
+    margin: 0px;
+}

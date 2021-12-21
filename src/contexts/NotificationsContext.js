@@ -11,7 +11,7 @@ export const NotificationsProvider = ({ children }) => {
   const [notifications, setNotifications] = useState(defaultNotificationState);
 
   const newNotification = (message) => {
-      console.log('newnotification')
+    // console.log('newnotification')
     setNotifications({ show: true, message });
   };
 
@@ -19,11 +19,15 @@ export const NotificationsProvider = ({ children }) => {
     setNotifications(defaultNotificationState);
   };
 
-  setTimeout(()=>{setNotifications(defaultNotificationState)},3000);
+  setTimeout(() => {
+    setNotifications(defaultNotificationState);
+  }, 5000);
 
   return (
     <NotificationsContext.Provider
-      value={{notifications, newNotification, clearNotification}}>{children}
+      value={{ notifications, newNotification, clearNotification }}
+    >
+      {children}
     </NotificationsContext.Provider>
   );
 };

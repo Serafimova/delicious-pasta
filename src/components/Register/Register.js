@@ -33,7 +33,7 @@ export default function Register() {
       .register(email, password)
       .then((data) => {
         login(data);
-        navigate("/recipies");
+        navigate("/recipes");
       })
       .catch((err) => {
         newNotification(err.message);

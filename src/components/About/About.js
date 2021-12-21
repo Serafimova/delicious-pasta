@@ -5,7 +5,7 @@ export default function About() {
     <section className={styles["about"]}>
       <article className={styles["about-article"]}>
         <p>
-          Delicious Pasta is the place where you may find recipies for cooking
+          Delicious Pasta is the place where you may find recipes for cooking
           pasta from all around the world. Bolognese, Pesto, Carbonara, Chicken
           Parmezan with Zucchini or may be Cheese... Find out yours.
         </p>

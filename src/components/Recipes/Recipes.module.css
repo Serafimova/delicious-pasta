@@ -1,0 +1,35 @@
+.recipes-section {
+    /* height: 500px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../images/vidove-pasta.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    color: #ffd507;
+    font-size: 36px;
+    text-align: center;
+}
+
+.recipes-title{
+font-size: 42px;
+font-weight: bold;
+line-height: 2;
+padding-bottom: 30px;
+margin: 0;
+}
+
+.recipes-list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.no-recipes{
+    margin: 30px;
+}

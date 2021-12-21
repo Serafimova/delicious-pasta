@@ -29,7 +29,7 @@ export default function MyProfile() {
   //         throw new Error("Invalid email or password!");
   //       }
   //       login(data);
-  //       navigate("/recipies");
+  //       navigate("/recipes");
   //     })
   //     .catch((err) => {
   //       newNotification(err.message);
@@ -50,11 +50,11 @@ export default function MyProfile() {
           <p className={styles["profile-items-key"]}>Email: {user.email} </p>
         </div>
         <div className={styles["profile-items"]}>
-          <p className={styles["profile-items-key"]}>Liked recipies: count</p>
+          <p className={styles["profile-items-key"]}>Liked recipes: count</p>
         </div>
         <div className={styles["profile-items"]}>
-          <p className={styles["profile-items-key"]}>My recipies:</p>
-          <p className="noOffers">You don't have any recipies.</p>
+          <p className={styles["profile-items-key"]}>My recipes:</p>
+          <p className="noOffers">You don't have any recipes.</p>
           <Link className={styles["link"]} to="/create">
             Create one
           </Link>

@@ -11,7 +11,7 @@ export default function Header() {
         Nice to see you again, {user.email}
       </p>
       <li className={styles["header-nav-list"]}>
-        <Link to="/my-recipies">My Recipies</Link>
+        <Link to="/my-recipes">My Recipes</Link>
       </li>{" "}
       <li className={styles["header-nav-list"]}>
         <Link to="/my-profile">My Profile</Link>
@@ -50,7 +50,7 @@ export default function Header() {
             <Link to="/">Home</Link>
           </li>
           <li className={styles["header-nav-list"]}>
-            <Link to="/recipies">Recipies</Link>
+            <Link to="/recipes">Recipes</Link>
           </li>
           <li className={styles["header-nav-list"]}>
             <Link to="/about">About</Link>

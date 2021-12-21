@@ -11,10 +11,10 @@ export default function Main() {
           Welcome to the incredible world of pasta ;)
         </p>
         <p>
-          Here you can find your recipies from all around the world for making
+          Here you can find your recipes from all around the world for making
           delicious pasta.
         </p>
-        <p>Check our <Link className={styles["link"]} to="/recipies">Recipies</Link> for ideas</p>
+        <p>Check our <Link className={styles["link"]} to="/recipes">Recipes</Link> for ideas</p>
       </article>
         <article className={styles["main-acc"]}>
         <p>You want to share your favourite pasta recipe with other Pasta lovers?</p>
@@ -23,7 +23,8 @@ export default function Main() {
         </article>
     </section>
       <section className={styles["recent"]}>
-        <p className={styles["recent-title"]}>Recent recipies</p>
+        <p className={styles["recent-title"]}>Recent recipes</p>
+
       </section>
   </>
   );

@@ -28,7 +28,7 @@ export default function Login() {
           throw new Error("Invalid email or password!");
         }
         login(data);
-        navigate("/recipies");
+        navigate("/recipes");
       })
       .catch((err) => {
         newNotification(err.message);

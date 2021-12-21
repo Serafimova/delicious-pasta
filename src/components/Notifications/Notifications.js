@@ -6,8 +6,9 @@ export default function Notifications() {
 
   if (notifications.show) {
     return (
-      <section className={styles["alert"]} onClose={clearNotification}>
-        <h3>{notifications.message}</h3>
+      <section className={styles["alert"]} onClick={clearNotification}>
+        <h4>{notifications.message}</h4>
+        <p>CLick to close</p>
       </section>
     );
   } else {
