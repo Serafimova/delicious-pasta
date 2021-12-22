@@ -17,6 +17,10 @@
     margin: 20px 0;
 }
 
+.mail {
+    padding-left: 10px;
+}
+
 .footer-contacts-content i {
     color: tomato;
     padding-right: 15px;
@@ -25,18 +29,18 @@
 
 .footer-social {
     color: white;
-    /* text-align: center; */
 }
 
 .footer-social-title {
-    padding-left: 10px;
+    text-align: center;
 }
 
 .footer-social-content {
-    padding: 0;
     display: flex;
     justify-content: space-between;
+    text-align: center;
     align-items: center;
+    padding:0;
 }
 
 .footer-social-content-list {
@@ -44,7 +48,7 @@
 }
 
 .footer-social-content-list i {
-    padding-right: 15px;
+    /* padding-right: 15px; */
     font-size: 20px;
 }
 

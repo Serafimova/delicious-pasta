@@ -6,7 +6,7 @@ export default function Footer() {
       <article className="footer-contacts">
         <h3 className={styles["footer-contacts-title"]}>Contacts</h3>
         <p className={styles["footer-contacts-content"]}>
-          <i className="fas fa-map-marker-alt"></i>Address: Veliko Tarnovo
+          <i className="fas fa-envelope"></i>Email:  <a href="mailto:mdserafimova@gmail.com" className={styles["mail"]}>mdserafimova@gmail.com</a>
         </p>
         <p className={styles["footer-contacts-content"]}>
           <i className="fas fa-phone-alt"></i>Phone: 00000000000
