@@ -6,8 +6,8 @@ Pages:
 - Recipes - visible for Guest and Registered users;
 
 - Details - visible for Registered users;
-    - Edit and Delete buttons to every offer - visible for the User, who created the offer;
-    - Like button to every offer - visible for User, who is not creator of the Recipe;
+    - Edit and Delete buttons to every recipe - visible for the User, who created the recipe;
+    - Like button to every recipe - visible for User, who is not creator of the Recipe;
     - Comments and Create comment - visible for both User and Creator;
 
 - About - visible for Guest and Registered users;
@@ -33,7 +33,7 @@ Pages:
     - Method - required;
     - Transport - required;
    
-- Edit Recipe - visible for the creator of the offer; May edit or cancel editig.;
+- Edit Recipe - visible for the creator of the recipe; May edit or cancel editig.;
 
 - Delete Recipe - visible for the creator of the Recipe. After confirm dialog may be deleted;
 
