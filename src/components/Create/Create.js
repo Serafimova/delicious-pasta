@@ -30,7 +30,7 @@ export default function Create() {
       ingredients === "" ||
       method === ""
     ) {
-      newNotification("All fields are reùired!");
+      newNotification("All fields are reqired!");
       return;
     }
 
