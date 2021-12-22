@@ -61,14 +61,19 @@ export default function Create() {
       img: imageUrl,
       ingredients: ingredientsArray,
       method: methodArray,
-      likes:[]
+      likes: [],
     };
 
-    recipeService.createRecipe(recipeData, user.accessToken).then((result) => {
-      console.log("created");
-      console.log(recipeData);
-      navigate("/recipes");
-    });
+    recipeService
+      .createRecipe(recipeData, user.accessToken)
+      .then((result) => {
+        console.log("created");
+        console.log(recipeData);
+        navigate("/recipes");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

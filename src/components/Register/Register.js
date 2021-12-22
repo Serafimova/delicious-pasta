@@ -20,8 +20,12 @@ export default function Register() {
       newNotification("Please enter a valid email!");
       return;
     }
-    if (password.length < 6 || repeatPassword.length < 6) {
+    if (password.length < 6) {
       newNotification("Password must be at least 6 character long!");
+      return;
+    }
+    if (repeatPassword.length < 6) {
+      newNotification("Repeat password must be at least 6 character long!");
       return;
     }
     if (password !== repeatPassword) {

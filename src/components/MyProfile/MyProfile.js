@@ -32,8 +32,10 @@ export default function MyProfile() {
     likesService.getLikesByUserId(user._id).then((result) => {
       console.log('form myProfile', result.length)
       setLikes(result.length);
-    });
-  }, []);
+    }).catch((err) => {
+      console.log(err);
+    });;
+  }, [user._id]);
 
   return (
     <section id="profile-page" className={styles["profile"]}>

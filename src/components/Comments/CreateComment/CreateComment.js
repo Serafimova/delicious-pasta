@@ -15,8 +15,11 @@ export default function CreateComment({ recipeId }) {
     commentService
       .createComment(comment, recipeId, user.accessToken)
       .then((comment) => {
-        console.log("commented")
+        console.log("commented");
         navigate(`/recipes`);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 

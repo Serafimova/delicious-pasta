@@ -1,7 +1,7 @@
 const mainUrl = 'http://localhost:3030/data';
 
 export const getAllComments = (recipeId) => {
-     const query = encodeURIComponent(`recipeId="${recipeId}"`);
+    const query = encodeURIComponent(`recipeId="${recipeId}"`);
     return fetch(`${mainUrl}/commentRecipes?where=${query}`).then(res => res.json())
 }
 

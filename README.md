@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+Delicious Pasta Project for SoftUni React Course
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pages:
+- Home - visible for Guest and Registered Users, also shows recent Recipes;
 
-## Available Scripts
+- Recipes - visible for Guest and Registered users;
 
-In the project directory, you can run:
+- Details - visible for Registered users;
+    - Edit and Delete buttons to every offer - visible for the User, who created the offer;
+    - Like button to every offer - visible for User, who is not creator of the Recipe;
+    - Comments and Create comment - visible for both User and Creator;
 
-### `npm start`
+- About - visible for Guest and Registered users;
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Register - visible for Guests;
+    - All fileds are required;
+    - Email - required, must be a valid email;
+    - Password - required, at least 6 characters long;
+    - Repeat password - required, at least 6 characters long, must be the same as password;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Login - visible for Guests;
+    - All fileds are required;
+    - Email - required and must be a valid email;
 
-### `npm test`
+- Add New Recipe - visible for Registered users;
+    - All fileds are required;
+    - Name - required;
+    - Cooking time - mist be positive number and is required;
+    - Serves - mist be positive number and is required;
+    - Difficulty - recuired
+    - Image URL - required and must be a valid URL;
+    - Ingredients - required. Must be separated by (';');
+    - Method - required;
+    - Transport - required;
+   
+- Edit Recipe - visible for the creator of the offer; May edit or cancel editig.;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Delete Recipe - visible for the creator of the Recipe. After confirm dialog may be deleted;
 
-### `npm run build`
+- My Recipes - users can see the recipes they created;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- My Profile - users can see their profile - email, liked recipes, created recipes.;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Registered users:
+    - Can see Home Page;
+    - Can see Recipes Page;
+    - Can see About Page;
+    - Can create new Recipes;
+    - Can see Details page for every Recipe;
+    - Can edit and delete his own Recipes;
+    - Can see his own Recipes in My Recipes Page;
+    - Can see My Profile Page;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Guest user;
+    - Can see Home Page;    
+    - Can see Recipes Page;
+    - Can see About Page;
+    - Can see Register and Login Page;
 
-### `npm run eject`
+- 404 page; 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Using SoftUni practice server for back-end

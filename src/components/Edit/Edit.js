@@ -14,7 +14,6 @@ export default function Edit() {
   const navigate = useNavigate();
   const { newNotification } = useNotificationsContext();
 
-
   useEffect(() => {
     recipeService
       .getRecipeById(recipeId)
@@ -28,7 +27,6 @@ export default function Edit() {
         console.log(err);
       });
   }, [recipeId]);
-
 
   const onEditHandler = (e) => {
     e.preventDefault();
@@ -83,11 +81,16 @@ export default function Edit() {
       method: methodArray,
     };
 
-    recipeService.editRecipe(recipeId, recipeData, user.accessToken).then((result) => {
-      console.log("edited");
-      console.log(result);
-      navigate(`/${recipeId}/details`);
-    });
+    recipeService
+      .editRecipe(recipeId, recipeData, user.accessToken)
+      .then((result) => {
+        console.log("edited");
+        console.log(result);
+        navigate(`/${recipeId}/details`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -172,10 +175,13 @@ export default function Edit() {
           </article>
           <br />
           <input type="submit" className={styles["btn-green"]} value="Save" />
-          <Link to={`/${recipe._id}/details`} className={styles["btn-red"]} type="button">
+          <Link
+            to={`/${recipe._id}/details`}
+            className={styles["btn-red"]}
+            type="button"
+          >
             Cancel
           </Link>
-          
         </form>
       </article>
     </section>

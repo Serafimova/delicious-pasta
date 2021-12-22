@@ -5,16 +5,16 @@ import * as recipeService from "../../services/recipeService";
 import * as likesService from "../../services/likesService";
 import Confirm from "../Confirm/Confirm";
 import { useNotificationsContext } from "../../contexts/NotificationsContext";
-import styles from "./Details.module.css";
 import CreateComment from "../Comments/CreateComment";
 import AllComments from "../Comments/AllComments";
+import styles from "./Details.module.css";
 
 export default function Details() {
   const { user } = useAuthContext();
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState({});
   const [confirm, setConfirm] = useState(false);
-  const { newNotification} = useNotificationsContext();
+  const { newNotification } = useNotificationsContext();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,10 +32,15 @@ export default function Details() {
   }, [recipeId]);
 
   useEffect(() => {
-    likesService.getRecipeLikes(recipeId).then((result) => {
-      setRecipe((state) => ({ ...state, likes: result }));
-    });
-  }, []);
+    likesService
+      .getRecipeLikes(recipeId)
+      .then((result) => {
+        setRecipe((state) => ({ ...state, likes: result }));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [recipeId]);
 
   const confirmDelete = (e) => {
     e.preventDefault();
@@ -76,7 +81,7 @@ export default function Details() {
     }
 
     likesService.likeRecipe(user._id, recipeId, user.accessToken).then(() => {
-      setRecipe((state) => ({ ...state, likes: [...state.likes, user._id ]}))
+      setRecipe((state) => ({ ...state, likes: [...state.likes, user._id] }));
     });
   };
 
@@ -174,10 +179,10 @@ export default function Details() {
         </article>
       </section>
       <article className={styles["comment-content"]}>
-          <h2 className={styles["comment-content-title"]}>Comments</h2>
-        </article>
-        <AllComments recipeId={recipeId} />
-      <CreateComment recipeId={recipeId}/>
+        <h2 className={styles["comment-content-title"]}>Comments</h2>
+      </article>
+      <AllComments recipeId={recipeId} />
+      <CreateComment recipeId={recipeId} />
     </section>
   );
 }

@@ -3,16 +3,19 @@ import styles from "./RecipeCard.module.css";
 import { useState, useEffect } from "react";
 import * as likesService from "../../services/likesService";
 
-
-export default function RecipeCard({recipe}) {
+export default function RecipeCard({ recipe }) {
   const [likes, setLikes] = useState([]);
 
   useEffect(() => {
-    likesService.getRecipeLikes(recipe._id).then((result) => {
-      setLikes(result)
-    });
-  }, []);
-
+    likesService
+      .getRecipeLikes(recipe._id)
+      .then((result) => {
+        setLikes(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [recipe._id]);
 
   return (
     <>
@@ -46,17 +49,18 @@ export default function RecipeCard({recipe}) {
             </p>
           </article>
         </article>
-        
-        <Link to={`/${recipe._id}/details`} className={styles["btn"]}>How to cook it</Link>
+        <Link to={`/${recipe._id}/details`} className={styles["btn"]}>
+          How to cook it
+        </Link>
         <p className={styles["likes"]}>
-        {likes.length === 0 ? '' :
-                <i className="fas fa-heart"></i>}
-                {likes.length > 0
-                  ? 
-                  `Liked by ${likes.length} Pasta Lover${
-                      likes.length > 1 ? "s" : ""
-                    }`:""}
-              </p> </section>
+          {likes.length === 0 ? "" : <i className="fas fa-heart"></i>}
+          {likes.length > 0
+            ? `Liked by ${likes.length} Pasta Lover${
+                likes.length > 1 ? "s" : ""
+              }`
+            : ""}
+        </p>
+      </section>
     </>
   );
 }
