@@ -45,7 +45,7 @@ export default function Create() {
     // }
 
     let ingredientsArray = ingredients
-      .split(",")
+      .split(";")
       .map((x) => x.trim())
       .filter((x) => x !== "");
     let methodArray = method
@@ -61,11 +61,12 @@ export default function Create() {
       img: imageUrl,
       ingredients: ingredientsArray,
       method: methodArray,
+      likes:[]
     };
 
     recipeService.createRecipe(recipeData, user.accessToken).then((result) => {
       console.log("created");
-      console.log(result);
+      console.log(recipeData);
       navigate("/recipes");
     });
   };
@@ -119,7 +120,7 @@ export default function Create() {
           </article>
           <article className={styles["card-field"]}>
             <label htmlFor="ingredients">Ingredients</label>
-            <p>Please enter the ingredients separated with comma (',')</p>
+            <p>Please enter the ingredients separated with comma (';')</p>
             <textarea
               type="text"
               name="ingredients"

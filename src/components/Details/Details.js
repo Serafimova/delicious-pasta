@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import * as recipeService from "../../services/recipeService";
+// import { useNotificationsContext } from "../../contexts/NotificationsContext";
 import styles from "./Details.module.css";
 
 export default function Details() {
@@ -11,6 +12,7 @@ export default function Details() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState({});
   const navigate = useNavigate();
+  // const { newNotification } = useNotificationsContext();
 
   useEffect(() => {
     recipeService
@@ -29,15 +31,18 @@ export default function Details() {
   const onDeleteHandler = (e) => {
     e.preventDefault();
     recipeService.deleteRecipe(recipeId, user.accessToken).then(() => {
-      console.log('delete')
+      console.log("delete");
       navigate("/recipes");
     });
     // add confirm
   };
 
+  
   const ownerButtons = (
     <article className={styles["owner-buttons"]}>
-      <Link to={`/${recipe._id}/edit`} className={styles["btn-orange"]}>Edit</Link>
+      <Link to={`/${recipe._id}/edit`} className={styles["btn-orange"]}>
+        Edit
+      </Link>
       <button className={styles["btn-red"]} onClick={onDeleteHandler}>
         Delete
       </button>
@@ -82,11 +87,25 @@ export default function Details() {
             </article>
             <article className={styles["guest"]}>
               <p className={styles["likes"]}>
-                <i className="fas fa-heart"></i>Liked by 1 Pasta
-                Lovers
+                <i className="fas fa-heart"></i>
+                {recipe.likes?.length === 0
+                  ? "No likes"
+                  : `Liked by ${recipe.likes?.length} Pasta Lover${
+                      recipe.likes?.length > 1 ? "s" : ""
+                    }`}
               </p>
               {user._id && user._id !== recipe._ownerId ? (
-                <button className={styles["btn-pink"]}>Like</button>
+                <button
+                  className={styles["btn-pink"]}
+              
+                  style={{
+                    visibility: recipe.likes?.includes(user._id)
+                      ? "hidden"
+                      : "visible",
+                  }}
+                >
+                  Like
+                </button>
               ) : (
                 ""
               )}
@@ -100,40 +119,19 @@ export default function Details() {
                 Ingredients
               </h2>
               <article className={styles["cooking-ingredients-content"]}>
-                {/* <ul>
-                  {recipe.ingredients.map((x, i) => {
-                    <li key={i}>{x}</li>;
-                  })}
-                </ul> */}
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Minus illum voluptas, beatae id officiis ad? Recusandae, quis
-                  aut quia, quibusdam necessitatibus non numquam a, voluptatibus
-                  officiis magnam aliquam nesciunt modi.
-                </p>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Minus illum voluptas, beatae id officiis ad? Recusandae, quis
-                  aut quia, quibusdam necessitatibus non numquam a, voluptatibus
-                  officiis magnam aliquam nesciunt modi.
-                </p>
+                <ul>
+                  {recipe.ingredients?.map((x, i) => (
+                    <li key={i}>{x}</li>
+                  ))}
+                </ul>
               </article>
             </article>
             <article className={styles["cooking-steps"]}>
               <h2 className={styles["cooking-steps-title"]}>Steps</h2>
               <article className={styles["cooking-steps-content"]}>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Minus illum voluptas, beatae id officiis ad? Recusandae, quis
-                  aut quia, quibusdam necessitatibus non numquam a, voluptatibus
-                  officiis magnam aliquam nesciunt modi.
-                </p>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Minus illum voluptas, beatae id officiis ad? Recusandae, quis
-                  aut quia, quibusdam necessitatibus non numquam a, voluptatibus
-                  officiis magnam aliquam nesciunt modi.
-                </p>
+                {recipe.method?.map((x, i) => (
+                  <li key={i}>{x}.</li>
+                ))}
               </article>
             </article>
           </article>

@@ -65,7 +65,7 @@ export default function Edit() {
     // }
 
     let ingredientsArray = ingredients
-      .split(",")
+      .split(";")
       .map((x) => x.trim())
       .filter((x) => x !== "");
     let methodArray = method
