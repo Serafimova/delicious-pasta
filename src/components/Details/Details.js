@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import * as recipeService from "../../services/recipeService";
+import Confirm from "../Confirm/Confirm";
 // import { useNotificationsContext } from "../../contexts/NotificationsContext";
 import styles from "./Details.module.css";
 
@@ -11,8 +12,8 @@ export default function Details() {
   const { user } = useAuthContext();
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState({});
+  const [confirm, setConfirm] = useState(false);
   const navigate = useNavigate();
-  // const { newNotification } = useNotificationsContext();
 
   useEffect(() => {
     recipeService
@@ -28,12 +29,17 @@ export default function Details() {
       });
   }, [recipeId]);
 
+const confirmDelete = (e)=>{
+  e.preventDefault();
+  setConfirm(true);
+}
+
   const onDeleteHandler = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     recipeService.deleteRecipe(recipeId, user.accessToken).then(() => {
       console.log("delete");
       navigate("/recipes");
-    });
+    }).finally(()=>setConfirm(false));
     // add confirm
   };
 
@@ -43,7 +49,7 @@ export default function Details() {
       <Link to={`/${recipe._id}/edit`} className={styles["btn-orange"]}>
         Edit
       </Link>
-      <button className={styles["btn-red"]} onClick={onDeleteHandler}>
+      <button className={styles["btn-red"]} onClick={confirmDelete}>
         Delete
       </button>
     </article>
@@ -51,6 +57,11 @@ export default function Details() {
 
   return (
     <section className={styles["details"]}>
+      <Confirm 
+      show = {confirm}
+      onClose = {() => setConfirm(false)}
+      onSave = {onDeleteHandler}
+      />
       <section className={styles["card"]}>
         <article className={styles["card-content"]}>
           <h2 className={styles["card-content-title"]}>{recipe.name}</h2>
