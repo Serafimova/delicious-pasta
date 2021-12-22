@@ -1,0 +1,24 @@
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+.comment {
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 1100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.no-comments{
+    font-size: 18px;
+}

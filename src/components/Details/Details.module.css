@@ -141,3 +141,19 @@
     margin: 20px 0;
     text-align: justify;
 }
+
+.comment {
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 1100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.comment-content-title {
+    text-align: center;
+    margin: 20px;
+    font-size: 36px;
+}

@@ -1,0 +1,14 @@
+.article {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid black;
+    align-content: center;
+    border-radius: 6px;
+    margin: 20px;
+    background: rgb(241, 226, 229);
+    color: black;
+}
+
+.article p {
+    margin: 0;
+}

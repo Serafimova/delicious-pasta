@@ -11,7 +11,6 @@ export const NotificationsProvider = ({ children }) => {
   const [notifications, setNotifications] = useState(defaultNotificationState);
 
   const newNotification = (message) => {
-    // console.log('newnotification')
     setNotifications({ show: true, message });
   };
 

@@ -6,6 +6,8 @@ import * as likesService from "../../services/likesService";
 import Confirm from "../Confirm/Confirm";
 import { useNotificationsContext } from "../../contexts/NotificationsContext";
 import styles from "./Details.module.css";
+import CreateComment from "../Comments/CreateComment";
+import AllComments from "../Comments/AllComments";
 
 export default function Details() {
   const { user } = useAuthContext();
@@ -74,7 +76,6 @@ export default function Details() {
     }
 
     likesService.likeRecipe(user._id, recipeId, user.accessToken).then(() => {
-      console.log("yey liked");
       setRecipe((state) => ({ ...state, likes: [...state.likes, user._id ]}))
     });
   };
@@ -172,6 +173,11 @@ export default function Details() {
           </article>
         </article>
       </section>
+      <article className={styles["comment-content"]}>
+          <h2 className={styles["comment-content-title"]}>Comments</h2>
+        </article>
+        <AllComments recipeId={recipeId} />
+      <CreateComment recipeId={recipeId}/>
     </section>
   );
 }

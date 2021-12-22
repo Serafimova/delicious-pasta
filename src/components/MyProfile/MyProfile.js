@@ -30,7 +30,6 @@ export default function MyProfile() {
 
   useEffect(() => {
     likesService.getLikesByUserId(user._id).then((result) => {
-      // const userLikes = result.filter(x=>x===user._id);
       console.log('form myProfile', result.length)
       setLikes(result.length);
     });
