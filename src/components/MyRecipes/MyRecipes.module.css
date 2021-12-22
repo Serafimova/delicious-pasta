@@ -17,7 +17,7 @@
     font-weight: bold;
     line-height: 2;
     padding-bottom: 30px;
-    margin: 0;
+    margin-top: 50px;
 }
 
 .myrecipes-list {
@@ -28,11 +28,12 @@
     justify-content: center;
     align-items: stretch;
 }
+
 .no-recipes{
     margin-bottom: 30px;
 }
 
-.link h2,
+/* .link h2,
 .link p {
     margin: 0px;
 }
@@ -46,4 +47,4 @@
     font-style: italic;
     color: white;
     font-weight: bold;
-}
+} */

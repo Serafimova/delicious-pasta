@@ -1,7 +1,6 @@
 @import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
 
 .details {
-    /* height: 700px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +16,7 @@
     margin: 20px auto;
     border: 1px solid black;
     border-radius: 10px;
-    width: 900px;
+    width: 1000px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -30,14 +29,13 @@
     font-size: 42px;
 }
 
-
 .recipie-info {
     text-align: center;
     display: flex;
 }
 
 .card-image {
-    width: 300px;
+    width: 320px;
     padding: 20px;
     border-radius: 10px;
 }
@@ -45,13 +43,12 @@
 .card-image img {
     width: 100%;
     border-radius: 10px;
-
 }
 
 .card-props {
     display: flex;
     justify-content: space-between;
-    padding: 0 12px;
+    padding: 0 10px;
 }
 
 .time,
@@ -60,6 +57,7 @@
     font-size: 16px;
     text-align: center;
     width: 80px;
+    flex-basis: 30%;
 }
 
 .time-text i,
@@ -80,10 +78,14 @@
     margin: 40px 20px;
 }
 
+.likes{
+    margin: 0;
+}
+
 .likes i {
     font-size: 22px;
     padding-right: 8px;
-    color: rgb(221, 61, 160);
+    color: rgb(221, 61, 160);   
 }
 
 .btn-pink,
@@ -122,7 +124,7 @@
 
 
 .cooking {
-    padding: 0 30px;
+    padding: 10px 30px 20px 30px;
 }
 
 .cooking-ingredients {

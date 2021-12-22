@@ -14,7 +14,7 @@ export default function Recipes() {
           throw new Error(result.message);
         }
         const recipesData = Object.values(result);
-        setRecipes(recipesData);
+        setRecipes(recipesData.reverse());
       })
       .catch((err) => {
         console.log(err);

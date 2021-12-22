@@ -1,11 +1,10 @@
-// import { Link } from "react-router-dom";
-
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import * as recipeService from "../../services/recipeService";
+import * as likesService from "../../services/likesService";
 import Confirm from "../Confirm/Confirm";
-// import { useNotificationsContext } from "../../contexts/NotificationsContext";
+import { useNotificationsContext } from "../../contexts/NotificationsContext";
 import styles from "./Details.module.css";
 
 export default function Details() {
@@ -13,6 +12,7 @@ export default function Details() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState({});
   const [confirm, setConfirm] = useState(false);
+  const { newNotification} = useNotificationsContext();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,21 +29,28 @@ export default function Details() {
       });
   }, [recipeId]);
 
-const confirmDelete = (e)=>{
-  e.preventDefault();
-  setConfirm(true);
-}
+  useEffect(() => {
+    likesService.getRecipeLikes(recipeId).then((result) => {
+      setRecipe((state) => ({ ...state, likes: result }));
+    });
+  }, []);
 
-  const onDeleteHandler = (e) => {
-    // e.preventDefault();
-    recipeService.deleteRecipe(recipeId, user.accessToken).then(() => {
-      console.log("delete");
-      navigate("/recipes");
-    }).finally(()=>setConfirm(false));
-    // add confirm
+  const confirmDelete = (e) => {
+    e.preventDefault();
+    setConfirm(true);
   };
 
-  
+  const onDeleteHandler = (e) => {
+    e.preventDefault();
+    recipeService
+      .deleteRecipe(recipeId, user.accessToken)
+      .then(() => {
+        console.log("delete");
+        navigate("/recipes");
+      })
+      .finally(() => setConfirm(false));
+  };
+
   const ownerButtons = (
     <article className={styles["owner-buttons"]}>
       <Link to={`/${recipe._id}/edit`} className={styles["btn-orange"]}>
@@ -55,12 +62,29 @@ const confirmDelete = (e)=>{
     </article>
   );
 
+  const onLikeHandler = (e) => {
+    e.preventDefault();
+    if (user._id === recipe._ownerId) {
+      newNotification("You can/'t like your own recipe!");
+      return;
+    }
+    if (recipe.likes.includes(user._id)) {
+      newNotification("You already liked this recipe!");
+      return;
+    }
+
+    likesService.likeRecipe(user._id, recipeId, user.accessToken).then(() => {
+      console.log("yey liked");
+      setRecipe((state) => ({ ...state, likes: [...state.likes, user._id ]}))
+    });
+  };
+
   return (
     <section className={styles["details"]}>
-      <Confirm 
-      show = {confirm}
-      onClose = {() => setConfirm(false)}
-      onSave = {onDeleteHandler}
+      <Confirm
+        show={confirm}
+        onClose={() => setConfirm(false)}
+        onSave={onDeleteHandler}
       />
       <section className={styles["card"]}>
         <article className={styles["card-content"]}>
@@ -108,11 +132,11 @@ const confirmDelete = (e)=>{
               {user._id && user._id !== recipe._ownerId ? (
                 <button
                   className={styles["btn-pink"]}
-              
+                  onClick={onLikeHandler}
                   style={{
-                    visibility: recipe.likes?.includes(user._id)
-                      ? "hidden"
-                      : "visible",
+                    display: recipe.likes?.includes(user._id)
+                      ? "none"
+                      : "block",
                   }}
                 >
                   Like

@@ -5,7 +5,7 @@
     margin: 20px;
     border: 1px solid black;
     border-radius: 10px;
-   flex-basis: 20%;
+    flex-basis: 20%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,6 @@
     height: 300px;
     padding: 20px;
     border-radius: 10px;
-    
 }
 
 .card-image img {
@@ -36,6 +35,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
+    margin-bottom: 20px;
 }
 
 .time,
@@ -46,7 +46,9 @@
     width: 80px;
 }
 
-.time-title, .serves-title, .difficulty-title{
+.time-title,
+.serves-title,
+.difficulty-title {
     margin: 0 0 10px 0;
 }
 
@@ -55,6 +57,18 @@
 .difficulty-text i {
     font-size: 18px;
     padding-right: 8px;
+}
+
+.likes {
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.likes i {
+    font-size: 28px;
+    padding-right: 8px;
+    color: rgb(221, 61, 160);
 }
 
 .btn {

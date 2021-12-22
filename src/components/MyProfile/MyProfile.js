@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuthContext } from "../../contexts/AuthContext";
 import * as recipeService from "../../services/recipeService";
+import * as likesService from "../../services/likesService";
 
 import { Link } from "react-router-dom";
 
@@ -10,6 +11,7 @@ export default function MyProfile() {
   const { user } = useAuthContext();
 
   const [recipes, setRecipes] = useState([]);
+  const [likes, setLikes] = useState(0);
 
   useEffect(() => {
     recipeService
@@ -26,6 +28,14 @@ export default function MyProfile() {
       });
   }, [user._id]);
 
+  useEffect(() => {
+    likesService.getLikesByUserId(user._id).then((result) => {
+      // const userLikes = result.filter(x=>x===user._id);
+      console.log('form myProfile', result.length)
+      setLikes(result.length);
+    });
+  }, []);
+
   return (
     <section id="profile-page" className={styles["profile"]}>
       <h2 className={styles["profile-title"]}>Your profile</h2>
@@ -35,16 +45,19 @@ export default function MyProfile() {
           <p className={styles["profile-items-key"]}>Email: {user.email} </p>
         </div>
         <div className={styles["profile-items"]}>
-          <p className={styles["profile-items-key"]}>Liked recipes: count</p>
+          <p className={styles["profile-items-key"]}>Liked recipes: {likes}  <i className="fas fa-heart"></i></p>
         </div>
         <div className={styles["profile-items"]}>
           <p className={styles["profile-items-key"]}>My recipes:</p>
+          
+
           {recipes && recipes.length > 0 ? (
-          recipes.map((x) => <li key={x._id} recipe={x}>{x.name} <Link className={styles["link"]} to={`/${x._id}/details`}>
+            recipes.map((x) => <li key={x._id} recipe={x}>{x.name} <Link className={styles["link"]} to={`/${x._id}/details`}>
            See more 
         </Link></li>)
+           
         ) : (<>
-          <p className="noOffers">You don't have any recipes.</p>
+          <p className={styles["noOffers"]}>You don't have any recipes.</p>
           <Link className={styles["link"]} to="/create">
             Create one
           </Link>

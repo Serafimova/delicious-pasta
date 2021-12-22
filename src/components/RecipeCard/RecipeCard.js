@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import styles from "./RecipeCard.module.css";
+import { useState, useEffect } from "react";
+import * as likesService from "../../services/likesService";
+
 
 export default function RecipeCard({recipe}) {
+  const [likes, setLikes] = useState([]);
+
+  useEffect(() => {
+    likesService.getRecipeLikes(recipe._id).then((result) => {
+      setLikes(result)
+    });
+  }, []);
+
+
   return (
     <>
       <section className={styles["card"]}>
@@ -16,7 +28,7 @@ export default function RecipeCard({recipe}) {
             <p className={styles["time-title"]}>Cook time</p>
             <p className={styles["time-text"]}>
               <i className="far fa-clock"></i>
-              {recipe.cookingTime}
+              {recipe.cookingTime} min
             </p>
           </article>
           <article className={styles["serves"]}>
@@ -34,8 +46,17 @@ export default function RecipeCard({recipe}) {
             </p>
           </article>
         </article>
+        
         <Link to={`/${recipe._id}/details`} className={styles["btn"]}>How to cook it</Link>
-      </section>
+        <p className={styles["likes"]}>
+        {likes.length === 0 ? '' :
+                <i className="fas fa-heart"></i>}
+                {likes.length > 0
+                  ? 
+                  `Liked by ${likes.length} Pasta Lover${
+                      likes.length > 1 ? "s" : ""
+                    }`:""}
+              </p> </section>
     </>
   );
 }

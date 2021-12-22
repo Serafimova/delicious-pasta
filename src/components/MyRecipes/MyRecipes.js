@@ -26,7 +26,7 @@ export default function MyRecipes() {
 
   return (
     <section className={styles["myrecipes-section"]}>
-      <h1 className={styles["myrecipes-title"]}>Recipes</h1>
+      <h1 className={styles["myrecipes-title"]}>My Recipes</h1>
       <section className={styles["myrecipes-list"]}>
         {recipes && recipes.length > 0 ? (
           recipes.map((x) => <RecipeCard key={x._id} recipe={x} />)
