@@ -41,7 +41,7 @@ function App() {
                 <Route path="/my-profile" element={<MyProfile />} />
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/create" element={<Create />} />
-              <Route path="/:recipeId/details" element={<Details />} />
+                <Route path="/:recipeId/details" element={<Details />} />
                 <Route path="/:recipeId/edit" element={<Edit />} />
               </Route>
             </Routes>

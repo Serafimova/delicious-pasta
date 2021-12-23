@@ -67,8 +67,6 @@ export default function Create() {
     recipeService
       .createRecipe(recipeData, user.accessToken)
       .then((result) => {
-        console.log("created");
-        console.log(recipeData);
         navigate("/recipes");
       })
       .catch((err) => {

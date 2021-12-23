@@ -18,7 +18,7 @@ export const getRecipeById = (recipeId) => {
 }
 
 export const createRecipe = (recipeData, token) => {
-    return fetch(`${mainUrl}/pastaRecipes`, {
+    return fetch(`${mainUrl}pastaRecipes`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ export const createRecipe = (recipeData, token) => {
         body: JSON.stringify({
             ...recipeData
         })
-    }).then(res => res.json())
+    }).then(res => res.json());
 }
 
 export const editRecipe = (recipeId, recipeData, token) => {

@@ -84,11 +84,17 @@ export default function Edit() {
     recipeService
       .editRecipe(recipeId, recipeData, user.accessToken)
       .then((result) => {
+
+        if (result.code === 404) {
+          throw new Error("Sorry, we couldn't edit your recipe. ;( Please try again later.");
+        }
         console.log("edited");
         console.log(result);
         navigate(`/${recipeId}/details`);
       })
       .catch((err) => {
+        newNotification(err.message);
+        navigate(`/${recipeId}/details`);
         console.log(err);
       });
   };

@@ -16,5 +16,5 @@ export const createComment = (comment, recipeId, token) => {
             comment,
             recipeId
         })
-    }).then(res => res.json())
+    }).then(res => res.json());
 }

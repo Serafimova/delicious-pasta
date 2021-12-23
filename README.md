@@ -41,7 +41,7 @@ Pages:
 
 - My Profile - users can see their profile - email, liked recipes, created recipes.;
 
-Registered users:
+- Registered users:
     - Can see Home Page;
     - Can see Recipes Page;
     - Can see About Page;

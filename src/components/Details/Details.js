@@ -27,6 +27,8 @@ export default function Details() {
         setRecipe(result);
       })
       .catch((err) => {
+        newNotification('Sorry, we couldn\'t find the recipe you are looking for ;(');
+        navigate('/recipes')
         console.log(err);
       });
   }, [recipeId]);

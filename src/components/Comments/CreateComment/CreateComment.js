@@ -1,16 +1,23 @@
 import { useNavigate, Link } from "react-router-dom";
+import { useNotificationsContext } from "../../../contexts/NotificationsContext";
 import { useAuthContext } from "../../../contexts/AuthContext";
 import * as commentService from "../../../services/commentService";
 import styles from "./CreateComment.module.css";
 
 export default function CreateComment({ recipeId }) {
   const { user } = useAuthContext();
+  const { newNotification } = useNotificationsContext();
   const navigate = useNavigate();
 
   const onCommentHandler = (e) => {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
     let comment = formData.get("comment");
+
+    if (comment === "") {
+      newNotification("You can't send an empty comment");
+      return;
+    }
 
     commentService
       .createComment(comment, recipeId, user.accessToken)
